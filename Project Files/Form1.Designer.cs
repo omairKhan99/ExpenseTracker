@@ -38,7 +38,23 @@
             this.labelCategory.Size = new System.Drawing.Size(52, 13);
             this.labelCategory.TabIndex = 9;
             this.labelCategory.Text = "Category:";
-            
+
+            this.btnAddExpense.Location = new System.Drawing.Point(700, 20);
+            this.btnAddExpense.Name = "btnAddExpense";
+            this.btnAddExpense.Size = new System.Drawing.Size(88, 30);
+            this.btnAddExpense.TabIndex = 1;
+            this.btnAddExpense.Text = "Add Expense";
+            this.btnAddExpense.UseVisualStyleBackColor = true;
+            this.btnAddExpense.Click += new System.EventHandler(this.btnAddExpense_Click);
+
+            this.btnDeleteExpense.Location = new System.Drawing.Point(700, 100);
+            this.btnDeleteExpense.Name = "btnDeleteExpense";
+            this.btnDeleteExpense.Size = new System.Drawing.Size(88, 30);
+            this.btnDeleteExpense.TabIndex = 3;
+            this.btnDeleteExpense.Text = "Delete Expense";
+            this.btnDeleteExpense.UseVisualStyleBackColor = true;
+            this.btnDeleteExpense.Click += new System.EventHandler(this.btnDeleteExpense_Click);
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);

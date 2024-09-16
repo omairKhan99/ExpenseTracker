@@ -45,7 +45,21 @@ namespace ExpenseTracker
             MessageBox.Show("Expense added successfully!");
             LoadExpenses();
         }
+        private void btnDeleteExpense_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewExpenses.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(dataGridViewExpenses.SelectedRows[0].Cells[0].Value);
+                string query = "DELETE FROM Expenses WHERE Id = @Id";
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.Parameters.AddWithValue("@Id", id);
+                command.ExecuteNonQuery();
 
-        
+                MessageBox.Show("Expense deleted successfully!");
+                LoadExpenses();
+            }
+        }
+
+
     }
 }
