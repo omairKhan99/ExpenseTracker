@@ -13,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{6B24BAB4-8FCA-4D8F-AE20-3DE226EC3D4F}|ExpenseTracker.csproj|c:\\work\\expense_tracker\\project files\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6B24BAB4-8FCA-4D8F-AE20-3DE226EC3D4F}|ExpenseTracker.csproj|solutionrelative:project files\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B24BAB4-8FCA-4D8F-AE20-3DE226EC3D4F}|ExpenseTracker.csproj|c:\\work\\expense_tracker\\expensetracker.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{6B24BAB4-8FCA-4D8F-AE20-3DE226EC3D4F}|ExpenseTracker.csproj|solutionrelative:expensetracker.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +26,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExpenseTracker",
+              "DocumentMoniker": "C:\\Work\\Expense_Tracker\\ExpenseTracker.csproj",
+              "RelativeDocumentMoniker": "ExpenseTracker.csproj",
+              "ToolTip": "C:\\Work\\Expense_Tracker\\ExpenseTracker.csproj",
+              "RelativeToolTip": "ExpenseTracker.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-18T06:51:28.714Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -32,7 +48,7 @@
               "RelativeDocumentMoniker": "Project Files\\Form1.Designer.cs",
               "ToolTip": "C:\\Work\\Expense_Tracker\\Project Files\\Form1.Designer.cs",
               "RelativeToolTip": "Project Files\\Form1.Designer.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAwwC4AAABGAAAA",
+              "ViewState": "AQIAADEAAAAAAAAAAIAwwFcAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-16T06:04:59.103Z",
               "EditorCaption": ""
@@ -45,7 +61,7 @@
               "RelativeDocumentMoniker": "Project Files\\Form1.cs",
               "ToolTip": "C:\\Work\\Expense_Tracker\\Project Files\\Form1.cs",
               "RelativeToolTip": "Project Files\\Form1.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAcwEYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-16T06:04:08.574Z",
               "EditorCaption": ""
@@ -58,7 +74,7 @@
               "RelativeDocumentMoniker": "Project Files\\Program.cs",
               "ToolTip": "C:\\Work\\Expense_Tracker\\Project Files\\Program.cs",
               "RelativeToolTip": "Project Files\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-16T06:03:55.25Z",
               "EditorCaption": ""
