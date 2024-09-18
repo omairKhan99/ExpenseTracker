@@ -31,8 +31,11 @@
             this.dataGridViewExpenses.Name = "dataGridViewExpenses";
             this.dataGridViewExpenses.Size = new System.Drawing.Size(776, 250);
             this.dataGridViewExpenses.TabIndex = 0;
+            this.labelDate.AutoSize = true;
 
             this.labelCategory.AutoSize = true;
+            this.labelAmount.AutoSize = true;
+            this.labelDescription.AutoSize = true;
             this.labelCategory.Location = new System.Drawing.Point(12, 55);
             this.labelCategory.Name = "labelCategory";
             this.labelCategory.Size = new System.Drawing.Size(52, 13);
