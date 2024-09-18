@@ -31,7 +31,7 @@
             this.dataGridViewExpenses.Name = "dataGridViewExpenses";
             this.dataGridViewExpenses.Size = new System.Drawing.Size(776, 250);
             this.dataGridViewExpenses.TabIndex = 0;
-            
+
             this.labelCategory.AutoSize = true;
             this.labelCategory.Location = new System.Drawing.Point(12, 55);
             this.labelCategory.Name = "labelCategory";
@@ -55,6 +55,15 @@
             this.btnDeleteExpense.UseVisualStyleBackColor = true;
             this.btnDeleteExpense.Click += new System.EventHandler(this.btnDeleteExpense_Click);
 
+            this.Controls.Add(this.dataGridViewExpenses);
+            this.Controls.Add(this.btnAddExpense);
+            this.Controls.Add(this.btnEditExpense);
+            this.Controls.Add(this.btnDeleteExpense);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.comboBoxCategory);
+            this.Controls.Add(this.txtAmount);
+            this.Controls.Add(this.txtDescription);
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -66,4 +75,3 @@
         }
     }
 }
-

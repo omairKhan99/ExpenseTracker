@@ -42,9 +42,18 @@ namespace ExpenseTracker
 
         private void btnAddExpense_Click(object sender, EventArgs e)
         {
+            string query = "INSERT INTO Expenses (Date, Category, Amount, Description) VALUES (@Date, @Category, @Amount, @Description)";
+            SQLiteCommand command = new SQLiteCommand(query, connection);
+            command.Parameters.AddWithValue("@Date", dateTimePicker.Value);
+            command.Parameters.AddWithValue("@Category", comboBoxCategory.Text);
+            command.Parameters.AddWithValue("@Amount", txtAmount.Text);
+            command.Parameters.AddWithValue("@Description", txtDescription.Text);
+            command.ExecuteNonQuery();
+
             MessageBox.Show("Expense added successfully!");
             LoadExpenses();
         }
+
         private void btnDeleteExpense_Click(object sender, EventArgs e)
         {
             if (dataGridViewExpenses.SelectedRows.Count > 0)
@@ -60,6 +69,23 @@ namespace ExpenseTracker
             }
         }
 
+        private void btnEditExpense_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewExpenses.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(dataGridViewExpenses.SelectedRows[0].Cells[0].Value);
+                string query = "UPDATE Expenses SET Date = @Date, Category = @Category, Amount = @Amount, Description = @Description WHERE Id = @Id";
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.Parameters.AddWithValue("@Date", dateTimePicker.Value);
+                command.Parameters.AddWithValue("@Category", comboBoxCategory.Text);
+                command.Parameters.AddWithValue("@Amount", txtAmount.Text);
+                command.Parameters.AddWithValue("@Description", txtDescription.Text);
+                command.Parameters.AddWithValue("@Id", id);
+                command.ExecuteNonQuery();
 
+                MessageBox.Show("Expense updated successfully!");
+                LoadExpenses();
+            }
+        }
     }
 }
