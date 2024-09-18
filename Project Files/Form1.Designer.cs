@@ -1,4 +1,6 @@
-﻿namespace ExpenseTracker
+﻿using System.Collections.Generic;
+
+namespace ExpenseTracker
 {
     partial class Form1
     {
@@ -6,6 +8,7 @@
         private System.Windows.Forms.Button btnAddExpense;
         private System.Windows.Forms.Button btnEditExpense;
         private System.Windows.Forms.Button btnDeleteExpense;
+        private System.Windows.Forms.Button btnClearAll;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.TextBox txtAmount;
@@ -21,6 +24,7 @@
             this.btnAddExpense = new System.Windows.Forms.Button();
             this.btnEditExpense = new System.Windows.Forms.Button();
             this.btnDeleteExpense = new System.Windows.Forms.Button();
+            this.btnClearAll = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
@@ -29,6 +33,7 @@
             this.labelCategory = new System.Windows.Forms.Label();
             this.labelAmount = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
+            
 
             // Initialize components properties
 
@@ -50,6 +55,9 @@
             this.btnAddExpense.Text = "Add Expense";
             this.btnAddExpense.UseVisualStyleBackColor = true;
             this.btnAddExpense.Click += new System.EventHandler(this.btnAddExpense_Click);
+            // Set button colors
+            this.btnAddExpense.BackColor = System.Drawing.Color.LightGreen;   // Background color
+            this.btnAddExpense.ForeColor = System.Drawing.Color.DarkGreen;    // Text color
 
             // Edit Expense Button
             this.btnEditExpense.Location = new System.Drawing.Point(700, 60);
@@ -59,6 +67,9 @@
             this.btnEditExpense.Text = "Edit Expense";
             this.btnEditExpense.UseVisualStyleBackColor = true;
             this.btnEditExpense.Click += new System.EventHandler(this.btnEditExpense_Click);
+            // Set button colors
+            this.btnEditExpense.BackColor = System.Drawing.Color.LightBlue;
+            this.btnEditExpense.ForeColor = System.Drawing.Color.DarkBlue;
 
             // Delete Expense Button
             this.btnDeleteExpense.Location = new System.Drawing.Point(700, 100);
@@ -68,6 +79,22 @@
             this.btnDeleteExpense.Text = "Delete Expense";
             this.btnDeleteExpense.UseVisualStyleBackColor = true;
             this.btnDeleteExpense.Click += new System.EventHandler(this.btnDeleteExpense_Click);
+            // Set button colors
+            this.btnDeleteExpense.BackColor = System.Drawing.Color.LightCoral;
+            this.btnDeleteExpense.ForeColor = System.Drawing.Color.DarkRed;
+
+            // Button to clear all fields
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnClearAll.Location = new System.Drawing.Point(360, 110);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(100, 20);
+            this.btnClearAll.TabIndex = 15;
+            this.btnClearAll.Text = "Clear All";
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            // Set button colors
+            this.btnClearAll.BackColor = System.Drawing.Color.LightGray;
+            this.btnClearAll.ForeColor = System.Drawing.Color.Black;
 
             // DateTimePicker for date
             this.dateTimePicker.Location = new System.Drawing.Point(110, 20);
@@ -140,6 +167,7 @@
             this.Controls.Add(this.labelCategory);
             this.Controls.Add(this.labelAmount);
             this.Controls.Add(this.labelDescription);
+            this.Controls.Add(this.btnClearAll);
 
             // Form Settings
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

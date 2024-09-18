@@ -87,5 +87,16 @@ namespace ExpenseTracker
                 LoadExpenses();
             }
         }
+
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            // Clear the date picker
+            dateTimePicker.Value = DateTime.Now;
+            comboBoxCategory.SelectedIndex = -1;
+            txtAmount.Clear();
+            txtDescription.Clear();
+            dataGridViewExpenses.ClearSelection();
+        }
+
     }
 }
