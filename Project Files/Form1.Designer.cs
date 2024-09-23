@@ -9,6 +9,8 @@ namespace ExpenseTracker
         private System.Windows.Forms.Button btnEditExpense;
         private System.Windows.Forms.Button btnDeleteExpense;
         private System.Windows.Forms.Button btnClearAll;
+        private System.Windows.Forms.Button btnClearSelection;
+        private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.TextBox txtAmount;
@@ -17,6 +19,7 @@ namespace ExpenseTracker
         private System.Windows.Forms.Label labelCategory;
         private System.Windows.Forms.Label labelAmount;
         private System.Windows.Forms.Label labelDescription;
+        private System.Windows.Forms.Label lblTotalAmount; 
 
         private void InitializeComponent()
         {
@@ -25,6 +28,8 @@ namespace ExpenseTracker
             this.btnEditExpense = new System.Windows.Forms.Button();
             this.btnDeleteExpense = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnClearSelection = new System.Windows.Forms.Button(); 
+            this.btnTotal = new System.Windows.Forms.Button(); 
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
@@ -33,7 +38,8 @@ namespace ExpenseTracker
             this.labelCategory = new System.Windows.Forms.Label();
             this.labelAmount = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
-            
+            this.lblTotalAmount = new System.Windows.Forms.Label(); 
+
 
             // Initialize components properties
 
@@ -154,6 +160,31 @@ namespace ExpenseTracker
             this.labelDescription.TabIndex = 11;
             this.labelDescription.Text = "Description:";
 
+            // Total Amount Label
+            this.lblTotalAmount.AutoSize = true;
+            this.lblTotalAmount.Location = new System.Drawing.Point(12, 420);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(64, 13);
+            this.lblTotalAmount.TabIndex = 12;
+            this.lblTotalAmount.Text = "Total: $0.00";
+
+            // Clear Selection Button
+            this.btnClearSelection.Location = new System.Drawing.Point(480, 110);
+            this.btnClearSelection.Name = "btnClearSelection";
+            this.btnClearSelection.Size = new System.Drawing.Size(100, 20);
+            this.btnClearSelection.TabIndex = 16;
+            this.btnClearSelection.Text = "Clear Selection";
+            this.btnClearSelection.UseVisualStyleBackColor = true;
+            this.btnClearSelection.Click += new System.EventHandler(this.btnClearSelection_Click);
+
+            // Total Button
+            this.btnTotal.Location = new System.Drawing.Point(700, 400);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.Size = new System.Drawing.Size(88, 30);
+            this.btnTotal.TabIndex = 17;
+            this.btnTotal.Text = "Calculate Total";
+            this.btnTotal.UseVisualStyleBackColor = true;
+
             // Adding components to the form
             this.Controls.Add(this.dataGridViewExpenses);
             this.Controls.Add(this.btnAddExpense);
@@ -168,6 +199,9 @@ namespace ExpenseTracker
             this.Controls.Add(this.labelAmount);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.btnClearAll);
+            this.Controls.Add(this.btnClearSelection);
+            this.Controls.Add(this.lblTotalAmount);
+            this.Controls.Add(this.btnTotal);
 
             // Form Settings
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

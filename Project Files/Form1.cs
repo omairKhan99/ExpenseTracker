@@ -14,6 +14,7 @@ namespace ExpenseTracker
             InitializeComponent();
             InitializeDatabase();
             LoadExpenses();
+            UpdateTotalAmount();  // Call to initialize the total when the form loads
         }
 
         private void InitializeDatabase()
@@ -38,8 +39,14 @@ namespace ExpenseTracker
             DataTable table = new DataTable();
             adapter.Fill(table);
             dataGridViewExpenses.DataSource = table;
-        }
 
+            UpdateTotalAmount(); // Update the total after loading expenses
+        }
+        /// <summary>
+        /// Button to add expenses
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddExpense_Click(object sender, EventArgs e)
         {
             string query = "INSERT INTO Expenses (Date, Category, Amount, Description) VALUES (@Date, @Category, @Amount, @Description)";
@@ -54,6 +61,11 @@ namespace ExpenseTracker
             LoadExpenses();
         }
 
+        /// <summary>
+        /// Button to delete expenses
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteExpense_Click(object sender, EventArgs e)
         {
             if (dataGridViewExpenses.SelectedRows.Count > 0)
@@ -69,6 +81,11 @@ namespace ExpenseTracker
             }
         }
 
+        /// <summary>
+        /// Button to Edit expenses
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditExpense_Click(object sender, EventArgs e)
         {
             if (dataGridViewExpenses.SelectedRows.Count > 0)
@@ -88,6 +105,34 @@ namespace ExpenseTracker
             }
         }
 
+        /// <summary>
+        /// Clears the selection of rows in DataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnClearSelection_Click(object sender, EventArgs e)
+        {
+            dataGridViewExpenses.ClearSelection();
+        }
+
+        /// <summary>
+        /// Updates the total amount
+        /// </summary>
+        private void UpdateTotalAmount()
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow row in dataGridViewExpenses.Rows)
+            {
+                if (row.Cells["Amount"].Value != null)
+                {
+                    total += Convert.ToDecimal(row.Cells["Amount"].Value);
+                }
+            }
+
+            lblTotalAmount.Text = "Total: " + total.ToString("C");
+        }
+
         private void btnClearAll_Click(object sender, EventArgs e)
         {
             // Clear the date picker
@@ -96,6 +141,26 @@ namespace ExpenseTracker
             txtAmount.Clear();
             txtDescription.Clear();
             dataGridViewExpenses.ClearSelection();
+        }
+
+        /// <summary>
+        /// Update total when rows are added
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridViewExpenses_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            UpdateTotalAmount(); 
+        }
+
+        /// <summary>
+        /// Update total when rows are removed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridViewExpenses_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            UpdateTotalAmount(); 
         }
 
     }
