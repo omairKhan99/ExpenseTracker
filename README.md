@@ -21,4 +21,7 @@ A simple C# Windows Forms application to track daily expenses. This project allo
    https://github.com/omairKhan99/ExpenseTracker.git
 
 ## Conceptual Design
+1. Initial Design 
  <img src="sources/Initial Design.jpg" alt="Expense Tracker UI" width="600">
+2. Final Design
+    <img src="sources/Final Output.jpg" alt="Expense Tracker UI" width="600">
